@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000000;
+    position: relative;
+    background: linear-gradient(10deg, #ffffff, #0bbca5); /* Degradado para el fondo */
+}
+
+body::before, body::after, .random-shape {
+    content: "";
+    position: absolute;
+    background: rgb(11, 188, 165);
+    border-radius: 50%; /* Hace la figura circular */
+    z-index: -1; /* Asegura que las figuras estén en el fondo */
+    animation: fadeIn 3s ease-in;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Configuración de las dos figuras principales */
+body::before {
+    top: 10%;
+    left: 20%;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(to top, #7edace, #0bbca5); /* Degradado circular */
+    animation-delay:0s; /* Desfase en la animación */
+}
+
+body::after {
+    top: 60%;
+    left: 70%;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(to top, #7edace, #0bbca5); /* Degradado circular */
+    animation-delay:0s; /* Desfase en la animación */
+}
+
+.random-shape {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(to top, #7edace, #0bbca5); /* Degradado circular */
+    animation-delay:0s; /* Desfase en la animación */
+}
+
+nav {
+    width: 100%;
+    background-color: #0bbca5;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
+
+main {
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    animation: fadeIn 3s ease-in;
+}
+
+section {
+    margin: 40px 0;
+    padding: 20px;
+    border-bottom: 1px solid #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    background-color: #ffffff; /* Fondo solo para las secciones */
+    border-radius: 40px;
+}
+
+h2 {
+    color: #0bbca5;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+a {
+    color: #878080;
+}
+
+.top-right-text {
+    position: absolute;
+    top: 2px;       /* Espacio desde la parte superior */
+    right: 10px;     /* Espacio desde la parte derecha */
+    color: rgb(255, 255, 255);    /* Color del texto */
+    padding: 10px 15px; /* Relleno alrededor del texto */
+    font-size: 30px;
+    z-index: 1000;   /* Asegura que esté por encima de otros elementos */
+    font-family:'Times New Roman', Times, serif
+}
+
+.top-left-text {
+    position: absolute;
+    top: 2px;       /* Espacio desde la parte superior */
+    left: 10px;     /* Espacio desde la parte derecha */
+    color: rgb(255, 255, 255);    /* Color del texto */
+    padding: 10px 15px; /* Relleno alrededor del texto */
+    font-size: 30px;
+    z-index: 1000;   /* Asegura que esté por encima de otros elementos */
+    font-family:'Times New Roman', Times, serif
+}
+
+/*Animacion de aparicion*/
+@keyframes fadeIn {                                         
+    from { opacity: 0; transform: translateY(-100px); }
+    to { opacity: 1; transform: translateY(0); }
+}
